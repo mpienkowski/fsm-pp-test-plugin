@@ -7,7 +7,7 @@
     <link href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <div id="messageContainer"></div>
+    <pre id="messageContainer"></pre>
     <div id="container"></div>
     <script src="https://unpkg.com/fsm-shell"></script>
     <script src="helpers.js"></script>
@@ -49,10 +49,10 @@
           initializeRefreshTokenStrategy(shellSdk, auth);
 
           displayMessage(`Plugin loaded (${cloudHost}/${account}/${company}/${user})`);
-          shellSdk.onViewState('technician', async technician => {
+          shellSdk.onViewState('technician', technician => {
             displayMessage('Received technician id', technician);
           });
-          shellSdk.onViewState('assignment', async assignment => {
+          shellSdk.onViewState('assignment', assignment => {
             displayMessage('Received assignment id', assignment);
           });
         });
