@@ -48,19 +48,12 @@
           // Each extension needs to implement its own strategy to refresh it.
           initializeRefreshTokenStrategy(shellSdk, auth);
 
-          // Add a listener expecting serviceCallId
-          shellSdk.onViewState('serviceCallId', async serviceCallId => {
-
-            displayMessage(`Loading for service call ${serviceCallId}...`);
-
-            let udfValues = await getUDFs(cloudHost, account, company, serviceCallId);
-
-            if (udfValues.length > 0) {
-              displayMessage('');
-              displayUDFs(udfValues);
-            } else {
-              displayMessage('No udf values');
-            }
+          displayMessage(`Plugin loaded (${cloudHost}/${account}/${company}/${user})`);
+          shellSdk.onViewState('technician', async technician => {
+            displayMessage('Received technician id', technician);
+          });
+          shellSdk.onViewState('assignment', async assignment => {
+            displayMessage('Received assignment id', assignment);
           });
         });
       }
