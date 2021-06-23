@@ -50,10 +50,10 @@
 
           displayMessage(`Plugin loaded (${cloudHost}/${account}/${company}/${user})`);
           shellSdk.onViewState('technician', technician => {
-            displayMessage('Received technician id', technician);
+            displayMessage(`Received technician id: ${technician}`);
           });
           shellSdk.onViewState('assignment', assignment => {
-            displayMessage('Received assignment id', assignment);
+            displayMessage(`Received assignment id: ${assignment}`);
           });
         });
       }
