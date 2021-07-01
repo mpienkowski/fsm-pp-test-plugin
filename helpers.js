@@ -12,6 +12,7 @@ function initializeRefreshTokenStrategy(shellSdk, auth) {
         });
     }
 
+    console.log('the token will expire in', auth.expires_in);
     setTimeout(() => fetchToken(), (auth.expires_in * 1000) - 5000);
 }
 
