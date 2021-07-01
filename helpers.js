@@ -6,7 +6,7 @@ function initializeRefreshTokenStrategy(shellSdk, auth) {
     });
 
     function fetchToken() {
-        console.log('Refreshing token...')
+        displayMessage('Refreshing token...')
         shellSdk.emit(SHELL_EVENTS.Version1.REQUIRE_AUTHENTICATION, {
             response_type: 'token'  // request a user token within the context
         });
