@@ -4,5 +4,5 @@
   "description": "Sample extension to demo data passing from PP",
   "version": "1.0.0", 
   "icon": "https://mpienkowski.github.io/fsm-pp-test-plugin/icon.png",
-  "optimalHeight": "150px"
+  "optimalHeight": "100px"
 }
